@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-    const [isError, setIsError] = useState<string | null>(null); // Error state here
+    const [isError, setIsError] = useState<string | null>(null);
 
     const router = useRouter();
 
@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     const signIn = async (email: string, password: string) => {
         setIsLoading(true);
-        setIsError(null); // Clear any previous errors
+        setIsError(null);
         try {
             const res = await fetch("https://api.escuelajs.co/api/v1/auth/login", {
                 method: "POST",
